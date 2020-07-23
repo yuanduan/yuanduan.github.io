@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>游戏开发记录-#0 新建文件夹 - 院短Studio</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+第0期，毕竟才新建了个文件夹（
+这里会简单的讲述一下这个游戏项目想要做成什么样，以及为什么会设计成这样。
+首先，这个项目的前身是个画不下去的饼，RogueLIke+DeckBuildGame类的游,"> 
+    <meta name="author" content="院短"> 
+    <link rel="alternative" href="atom.xml" title="院短Studio" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">院短Studio</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://git.lolicc.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">游戏开发记录-#0 新建文件夹</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">游戏开发记录-#0 新建文件夹</h1>
+        <div class="stuff">
+            <span>七月 23, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E4%BB%A3%E7%A0%81/" rel="tag">代码</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><img src="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/QQ%E5%9B%BE%E7%89%8720200705005847.jpg" alt="Image text"></p>
+<p>第0期，毕竟才新建了个文件夹（</p>
+<p>这里会简单的讲述一下这个游戏项目想要做成什么样，以及为什么会设计成这样。</p>
+<p>首先，这个项目的前身是个画不下去的饼，RogueLIke+DeckBuildGame类的游戏。在搭完半个框架，完成Demo试玩后，感觉8太行所以砍掉了。但代码遗留了下来，就拿来做这个新项目了。</p>
+<p>所以，新项目的游戏类型为 <b>ARPG+RogueLite+傻之逼</b>（？</p>
+<p>有关ARPG和Rogue的部分倒是没什么争议，传统的四向移动俯视2d，攻击一个键闪避一个键。主要设计上的争议则是怎么把打牌融合进ARPG里。目前定下来的设计思路是把卡牌设计成为除了直接攻击的另一种攻击手段、增益和各类道具。卡组装备栏为了方便使用，暂时只设计8格。</p>
+<p>目前卡牌分为了三类，<strong>模式切换类、角色增益类和其他类</strong>：</p>
+<ul>
+<li><p>模式切换类<br>在游戏的战斗部分，人物战斗的<strong>动作模组</strong>限制在5个动作+1个蓄力动作上，如果需要使用其他<strong>战斗动作模组</strong>则需使用<strong>模式切换类卡牌</strong>。同时，在切换模组时会使用卡牌上的[切换动作]技能。同类攻击模组的切换只会增加[切换动作]的伤害。 </p>
+</li>
+<li><p>角色增益类<br>这类卡牌则是直接增益角色，对角色属性或状态或武器攻击赋予一系列的BUFF。或是对敌方造成各种Debuff。相对于模式切换类卡牌，增益卡牌的设计需要更加激进，更有特性化一些。为了做出差异化，[增益技能]有着技能等级这样的设计。<br>增益卡牌所赋予的[增益技能]，BUFF时间的单位为秒。[增益技能]同类buff高等级的覆盖低等级的。</p>
+</li>
+<li><p>其他类<br>这部分准备将被动道具和消耗品这样的卡牌算在这里。</p>
+</li>
+</ul>
+<hr>
+<h2 id="战斗系统的设计"><a href="#战斗系统的设计" class="headerlink" title="战斗系统的设计"></a>战斗系统的设计</h2><p>伤害公式：(我方攻击力(基础攻击力+武器攻击力*攻击力提升增益减益)-敌方防御力(基础防御力*防御力提升增益减益))*属性克制*对XXX加伤=计算伤害*追伤=最终伤害</p>
+<p>战斗是传统的ARPG，z键攻击x键翻滚， 血条精力条，再加一个使用卡牌的条（存疑，不知是否真的需要这个条来限制玩家）。攻击属性分为火-》风-》水-》火 光《-》暗</p>
+<p>当然了，z键攻击也不会让你一直按下去就能通关的。所以各类动作模组有着一系列的附加属性。</p>
+<ul>
+<li>攻击力：武器的基础面板</li>
+<li>属性：敌人基本上都会带有属性，属性克制会有1.5倍的增伤，逆属则会受到0.75的减益。</li>
+<li>大小：武器的攻击范围。范围嘛，当然是越大越好了（未定：距离刃终部分的敌人隐藏增伤）</li>
+<li>攻速：攻击后摇和下一刀攻击的前摇的间隔。</li>
+<li>削韧：韧性决定了攻击出手后是否会被攻击打断，公式为（韧性-削韧）。</li>
+<li>重量：决定了攻击中动画的速度，以及移动速度，基本上会和大小挂钩。</li>
+</ul>
+<hr>
+<h2 id="部分的设计"><a href="#部分的设计" class="headerlink" title="部分的设计"></a>部分的设计</h2><p>营地，毕竟是RogueLite，结束战斗后的升级加成也是要有的。</p>
+<p>卡牌来源，怪物强度越高，给的牌就越好（暂定</p>
+<p>让玩家选择路线，风险和收益上的抉择</p>
+<hr>
+<p>搬运自原博客</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
