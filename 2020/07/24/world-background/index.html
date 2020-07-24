@@ -87,7 +87,7 @@
 <meta property="og:description" content="实际上，内核里写的只是类比，而不是说世界就是这么个构成。 世界观的内核  1&gt; World.Execute().newSimulation() &#x3D;&gt;.run();  ​        如果给世界观核心做一个类比的话，相当于一个用户操作计算机一般。​        世界的结构从主角出发，主角是垃圾回收站的程序簇，但到这里还不是我们操作的角色上的主角。​        故事发生于某一个巧">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/cover.png">
 <meta property="article:published_time" content="2020-07-24T01:36:28.000Z">
-<meta property="article:modified_time" content="2020-07-24T13:47:13.181Z">
+<meta property="article:modified_time" content="2020-07-24T15:13:07.451Z">
 <meta property="article:author" content="院短">
 <meta property="article:tag" content="背景设定">
 <meta property="article:tag" content="文案">
@@ -350,23 +350,23 @@
 
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; World.Execute().newSimulation() =&gt;.run();</span><br></pre></td></tr></table></figure>
 
-<p>​        如果给世界观核心做一个类比的话，相当于一个用户操作计算机一般。<br>​        世界的结构从主角出发，主角是垃圾回收站的程序簇，但到这里还不是我们操作的角色上的主角。<br>​        故事发生于某一个巧合，程序上的碎片垃圾因为巧合而构成了一段断片上的病毒程序，将回收站作为了宿主程序进行反编译、转录。<font size='1px'>（实际上，病毒也是因为偶然的蛋白错误折叠而产生的）</font><br>​        此时整个程序簇因为发现错误的转录开始，执行了protect程序开始清除病毒片段。<br>​        从这里开始我们将人物(?)划分成三个阵营，并命名：</p>
+<p>​        如果给世界观核心做一个类比的话，相当于一个用户操作计算机一般。<br>​        世界的结构从主角出发，主角是垃圾回收站的程序簇，但到这里还不是我们操作的角色上的主角。<br>​        故事发生于某一个巧合，程序上的碎片垃圾因为巧合而构成了一段断片上的病毒程序，将回收站作为了宿主程序进行反编译、转录。<font size='1px'>（实际上，病毒也是因为偶然的蛋白错误折叠而产生的）</font><br>​        此时整个程序簇因为发现错误的转录开始，执行了protect程序开始清除病毒片段。  </p>
+<a id="more"></a>
+
+<p>​        从这里开始我们将人物(?)划分成三个阵营，并命名：</p>
 <!--I think,therefore I AM-->
 
 <ul>
-<li><p>AM ：<br>  以整个垃圾回收站程序簇为代表的阵营，清理病毒作为首要目标。</p>
-</li>
-<li><p>Player：<br>  玩家的操作单位，一个protect程序片段（类比），根据玩家的进行路线阻止病毒扩散，或者阻止保护程序的运作，来决定病毒的侵蚀度。</p>
-</li>
-<li><p>AlterEgo：<br>  以感染了病毒的程序簇为代表的阵营，诞生于偶然。<br>  对程序进行感染也只是因为程序上的<strong>结构决定行为</strong>，所以他叫AlterEgo而不是SuperEgo。</p>
-</li>
+<li>AM ：<br>  以整个垃圾回收站程序簇为代表的阵营，清理病毒作为首要目标。<br>  当然了，这东西也多少被病毒片段修改了一小部分。<br>  AM的清理对象也包括了主角，只不过优先级放在最后处理。</li>
+<li>Player：<br>  玩家的操作单位，一个protect程序片段（类比），被小部分病毒片段修改了程序，但没有完全被病毒感染而产生了<strong>自我</strong>的特异点。根据玩家的进行路线阻止病毒扩散，或者阻止保护程序的运作，来决定病毒的侵蚀度。</li>
+<li>AlterEgo：<br>  以感染了病毒的程序簇为代表的阵营，诞生于偶然。<br>  自称神，每天忽悠你去把保护程序给鲨了。<br>  对程序进行感染也只是因为程序上的<strong>结构决定行为</strong>，所以它叫AlterEgo而不是SuperEgo。</li>
 </ul>
 <pre class="mermaid">graph TD;
   A[垃圾回收站] -->|病毒程序片段| B[主角];
   B --> C[AM];
   B --> D[Player];
   B --> E[AlterEgo];</pre>
-
+<p>实际上，三者来自同一本源。</p>
 <p>​        在游戏中的表现：AlterEgo会贯穿游戏始终，作为一个一开始就存在的城镇NPC贯穿游戏始终。而AM因为访问权限的原因会在游戏中盘阶段达成某些条件后在城镇中加入一个传送门，进入后才能交谈。</p>
 <h4 id="主角使用的力量，及世界的碎片的构成"><a href="#主角使用的力量，及世界的碎片的构成" class="headerlink" title="主角使用的力量，及世界的碎片的构成"></a>主角使用的力量，及世界的碎片的构成</h4><p>​        我们在小学二年级就学过，一段二进制可以是数据，也可以是程序。[世界的碎片]是程序实例销毁不完全后产生的碎片数据（内存空间没有被完全释放的游离实例）。将游离实例<strong>[世界的碎片]</strong>保存到自己的Memory中可在战斗中使用，仓库则为Dick空间。</p>
 <p>​        但如果你想问战斗之间所蕴含的背景设定，emmmm</p>
@@ -374,10 +374,44 @@
 <p>​        </p>
 <h4 id="当你到达一个事件的结局后，发生了什么？"><a href="#当你到达一个事件的结局后，发生了什么？" class="headerlink" title="当你到达一个事件的结局后，发生了什么？"></a>当你到达一个事件的结局后，发生了什么？</h4><p>​        什么都没发生</p>
 <p>​        因为程序都运行在一个虚拟机中，simulation的会话确保了进程安全。但所进入的结局会确实的留下影响。</p>
-<h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>​        </p>
+<h4 id="侵蚀度"><a href="#侵蚀度" class="headerlink" title="侵蚀度"></a>侵蚀度</h4><p>​        在地牢的进行中，玩家选择的路线（或是房间），会提高或是降低侵蚀度。</p>
+<p>​        侵蚀度越低，共通路线的怪物强度会有相应的减弱，低于一定数值则不会出现<strong>[圣]</strong>词缀怪物。</p>
+<p>​        侵蚀度越高，共通路线的怪物强度会有相应的加强，怪物的形象模糊扭曲，高于一定数值则容易出现<strong>[圣]</strong>词缀怪物。且更容易获取<strong>[世界碎片]</strong>。</p>
+<p>​        第二种侵蚀度的提高或是降低方法则是<strong>[塔罗牌]</strong>，不过本篇暂不展开。</p>
+<h5 id="路线设定"><a href="#路线设定" class="headerlink" title="路线设定"></a>路线设定</h5><p>​        目前设置了两条结局的路线，按照角色侵蚀度来决定路线与结局。</p>
+<ul>
+<li><p>路线–低侵蚀度–病毒清理路线：</p>
+<blockquote>
+<p>进入线路后，怪物分布多数为高侵蚀度<strong>[世界的残渣]</strong>。</p>
+</blockquote>
+</li>
+<li><p>路线–高侵蚀度–AM的破坏路线：</p>
+<blockquote>
+<p>进入线路后，怪物分布多数为[圣]词缀的其他保护程序。</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="追记-世界倾向性"><a href="#追记-世界倾向性" class="headerlink" title="追记-世界倾向性"></a>追记-世界倾向性</h5><p>​        每通过一次地牢/地宫，根据结局的不同，对<strong>[世界倾向性]</strong>产生一定的改变。</p>
+<p>​        两个倾向，暂且称之为低侵蚀和高侵蚀，</p>
+<p>​        </p>
 <p><br/><br/></p>
 <hr>
-<h2 id="如何套上一个西幻的皮–用西幻去描述上述内核"><a href="#如何套上一个西幻的皮–用西幻去描述上述内核" class="headerlink" title="如何套上一个西幻的皮–用西幻去描述上述内核"></a>如何套上一个西幻的皮–用西幻去描述上述内核</h2>
+<h2 id="如何套上一个西幻的皮–用西幻去描述上述内核"><a href="#如何套上一个西幻的皮–用西幻去描述上述内核" class="headerlink" title="如何套上一个西幻的皮–用西幻去描述上述内核"></a>如何套上一个西幻的皮–用西幻去描述上述内核</h2><p>​        你还是你，垃圾回收站，不过改个名叫<del>&lt;深渊漫步者&gt;</del>&lt;终末之地&gt;，意为世界破碎后维持熵的一个世界机制。</p>
+<p>​        但只要我们把计算机使用者改成&lt;神&gt;，程序称之为&lt;世界&gt;，垃圾堆的未释放内存称为&lt;世界的残渣&gt;，接下来的部分就十分容易套了。</p>
+<p>​        世界的残渣聚合沉淀，形成了&lt;深渊&gt;。离&lt;深渊&gt;最近的&lt;终末之地&gt;被侵蚀，从中分离了三股意识。</p>
+<ul>
+<li>AM ：终末之地意识占据了大部分的主动权，为了清理深渊意志而派生了许多拥有部分权限的清理工。</li>
+<li>Player：玩家，作为深渊清理工派生于终末之地，所以拥有部分权限。因为侵蚀不完全所诞生的一个特异点。</li>
+<li>AlterEgo：深渊的意识，世界的残渣沉淀物而成，因为侵蚀了部分终末之地，所以诞生了AlterEgo人格，拥有一部分终末之地的权限来引导玩家。</li>
+</ul>
+<p>​        因为拥有部分权限，所以可以调出世界碎片里的物质作为自己的武器使用。</p>
+<hr>
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p>Q:为什么叫AM</p>
+<p>A:因为是Administrator Me</p>
+<p>A:也因为 I think ,therefore I AM</p>
+<p>Q:打算进行有关第四面墙的描写吗</p>
+<p>A:没有</p>
+
       
     </div>
     
@@ -553,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#世界观的内核"><span class="nav-number">1.</span> <span class="nav-text">世界观的内核</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主角使用的力量，及世界的碎片的构成"><span class="nav-number">1.0.1.</span> <span class="nav-text">主角使用的力量，及世界的碎片的构成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当你到达一个事件的结局后，发生了什么？"><span class="nav-number">1.0.2.</span> <span class="nav-text">当你到达一个事件的结局后，发生了什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">1.0.3.</span> <span class="nav-text">1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何套上一个西幻的皮–用西幻去描述上述内核"><span class="nav-number">2.</span> <span class="nav-text">如何套上一个西幻的皮–用西幻去描述上述内核</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#世界观的内核"><span class="nav-number">1.</span> <span class="nav-text">世界观的内核</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主角使用的力量，及世界的碎片的构成"><span class="nav-number">1.0.1.</span> <span class="nav-text">主角使用的力量，及世界的碎片的构成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当你到达一个事件的结局后，发生了什么？"><span class="nav-number">1.0.2.</span> <span class="nav-text">当你到达一个事件的结局后，发生了什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#侵蚀度"><span class="nav-number">1.0.3.</span> <span class="nav-text">侵蚀度</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#路线设定"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">路线设定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#追记-世界倾向性"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">追记-世界倾向性</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何套上一个西幻的皮–用西幻去描述上述内核"><span class="nav-number">2.</span> <span class="nav-text">如何套上一个西幻的皮–用西幻去描述上述内核</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#其他"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
