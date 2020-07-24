@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="背景设定,文案," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="实际上，内核里写的只是类比，而不是说世界就是这么个构成。 世界观的内核  1&gt; World.Execute().newSimulation() &#x3D;&gt;.run();  ​        如果给世界观核心做一个类比的话，相当于一个用户操作计算机一般。​        世界的结构从主角出发，主角是垃圾回收站的程序簇，但到这里还不是我们操作的角色上的主角。​        故事发生于某一个巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="游戏开发日志#0.2 有关背景设定的内核">
+<meta property="og:url" content="http://git.lolicc.com/2020/07/24/world-background/index.html">
+<meta property="og:site_name" content="院短Studio">
+<meta property="og:description" content="实际上，内核里写的只是类比，而不是说世界就是这么个构成。 世界观的内核  1&gt; World.Execute().newSimulation() &#x3D;&gt;.run();  ​        如果给世界观核心做一个类比的话，相当于一个用户操作计算机一般。​        世界的结构从主角出发，主角是垃圾回收站的程序簇，但到这里还不是我们操作的角色上的主角。​        故事发生于某一个巧">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/cover.png">
+<meta property="article:published_time" content="2020-07-24T01:36:28.000Z">
+<meta property="article:modified_time" content="2020-07-24T13:47:13.181Z">
+<meta property="article:author" content="院短">
+<meta property="article:tag" content="背景设定">
+<meta property="article:tag" content="文案">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/cover.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://git.lolicc.com/2020/07/24/world-background/"/>
+
+
+
+
+
+  <title>游戏开发日志#0.2 有关背景设定的内核 | 院短Studio</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headblock">
+      <img style="display:block;width:100%;height:472px;object-fit:cover;" src="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/60082303_p0.png">
+
+    </div>
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">院短Studio</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无业人员厨艺交流群</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://git.lolicc.com/2020/07/24/world-background/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="院短">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/005Sg40ogy1g16x1x7hnhj31su1emtqo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="院短Studio">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">游戏开发日志#0.2 有关背景设定的内核</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-24T09:36:28+08:00">
+                2020-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">游戏开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/cover.png" alt="World"></p>
+<p>实际上，内核里写的只是类比，而不是说世界就是这么个构成。</p>
+<h2 id="世界观的内核"><a href="#世界观的内核" class="headerlink" title="世界观的内核"></a>世界观的内核</h2><!--注释-->
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; World.Execute().newSimulation() =&gt;.run();</span><br></pre></td></tr></table></figure>
+
+<p>​        如果给世界观核心做一个类比的话，相当于一个用户操作计算机一般。<br>​        世界的结构从主角出发，主角是垃圾回收站的程序簇，但到这里还不是我们操作的角色上的主角。<br>​        故事发生于某一个巧合，程序上的碎片垃圾因为巧合而构成了一段断片上的病毒程序，将回收站作为了宿主程序进行反编译、转录。<font size='1px'>（实际上，病毒也是因为偶然的蛋白错误折叠而产生的）</font><br>​        此时整个程序簇因为发现错误的转录开始，执行了protect程序开始清除病毒片段。<br>​        从这里开始我们将人物(?)划分成三个阵营，并命名：</p>
+<!--I think,therefore I AM-->
+
+<ul>
+<li><p>AM ：<br>  以整个垃圾回收站程序簇为代表的阵营，清理病毒作为首要目标。</p>
+</li>
+<li><p>Player：<br>  玩家的操作单位，一个protect程序片段（类比），根据玩家的进行路线阻止病毒扩散，或者阻止保护程序的运作，来决定病毒的侵蚀度。</p>
+</li>
+<li><p>AlterEgo：<br>  以感染了病毒的程序簇为代表的阵营，诞生于偶然。<br>  对程序进行感染也只是因为程序上的<strong>结构决定行为</strong>，所以他叫AlterEgo而不是SuperEgo。</p>
+</li>
+</ul>
+<pre class="mermaid">graph TD;
+  A[垃圾回收站] -->|病毒程序片段| B[主角];
+  B --> C[AM];
+  B --> D[Player];
+  B --> E[AlterEgo];</pre>
+
+<p>​        在游戏中的表现：AlterEgo会贯穿游戏始终，作为一个一开始就存在的城镇NPC贯穿游戏始终。而AM因为访问权限的原因会在游戏中盘阶段达成某些条件后在城镇中加入一个传送门，进入后才能交谈。</p>
+<h4 id="主角使用的力量，及世界的碎片的构成"><a href="#主角使用的力量，及世界的碎片的构成" class="headerlink" title="主角使用的力量，及世界的碎片的构成"></a>主角使用的力量，及世界的碎片的构成</h4><p>​        我们在小学二年级就学过，一段二进制可以是数据，也可以是程序。[世界的碎片]是程序实例销毁不完全后产生的碎片数据（内存空间没有被完全释放的游离实例）。将游离实例<strong>[世界的碎片]</strong>保存到自己的Memory中可在战斗中使用，仓库则为Dick空间。</p>
+<p>​        但如果你想问战斗之间所蕴含的背景设定，emmmm</p>
+<p>​        这部分就先空着吧（</p>
+<p>​        </p>
+<h4 id="当你到达一个事件的结局后，发生了什么？"><a href="#当你到达一个事件的结局后，发生了什么？" class="headerlink" title="当你到达一个事件的结局后，发生了什么？"></a>当你到达一个事件的结局后，发生了什么？</h4><p>​        什么都没发生</p>
+<p>​        因为程序都运行在一个虚拟机中，simulation的会话确保了进程安全。但所进入的结局会确实的留下影响。</p>
+<h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>​        </p>
+<p><br/><br/></p>
+<hr>
+<h2 id="如何套上一个西幻的皮–用西幻去描述上述内核"><a href="#如何套上一个西幻的皮–用西幻去描述上述内核" class="headerlink" title="如何套上一个西幻的皮–用西幻去描述上述内核"></a>如何套上一个西幻的皮–用西幻去描述上述内核</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%83%8C%E6%99%AF%E8%AE%BE%E5%AE%9A/" rel="tag"># 背景设定</a>
+          
+            <a href="/tags/%E6%96%87%E6%A1%88/" rel="tag"># 文案</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/23/7-5-0-rename-folder/" rel="next" title="游戏开发记录-#0.1 重命名新建文件夹">
+                <i class="fa fa-chevron-left"></i> 游戏开发记录-#0.1 重命名新建文件夹
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/005Sg40ogy1g16x1x7hnhj31su1emtqo.jpg"
+                alt="院短" />
+            
+              <p class="site-author-name" itemprop="name">院短</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#世界观的内核"><span class="nav-number">1.</span> <span class="nav-text">世界观的内核</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主角使用的力量，及世界的碎片的构成"><span class="nav-number">1.0.1.</span> <span class="nav-text">主角使用的力量，及世界的碎片的构成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当你到达一个事件的结局后，发生了什么？"><span class="nav-number">1.0.2.</span> <span class="nav-text">当你到达一个事件的结局后，发生了什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">1.0.3.</span> <span class="nav-text">1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何套上一个西幻的皮–用西幻去描述上述内核"><span class="nav-number">2.</span> <span class="nav-text">如何套上一个西幻的皮–用西幻去描述上述内核</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">院短</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"startOnload":true});
+    }
+  </script>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
