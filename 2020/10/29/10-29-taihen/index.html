@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="代码," />
+  <meta name="keywords" content="设计," />
 
 
 
@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="第0期，毕竟才新建了个文件夹（ 这里会简单的讲述一下这个游戏项目想要做成什么样，以及为什么会设计成这样。 首先，这个项目的前身是个画不下去的饼，RogueLIke+DeckBuildGame类的游戏。在搭完半个框架，完成Demo试玩后，感觉8太行所以砍掉了。但代码遗留了下来，就拿来做这个新项目了。 所以，新项目的游戏类型为 ARPG+RogueLite+傻之逼（？">
+<meta name="description" content="摸了一个半月，好爽（ 今后也会重新开始活动，成为一个勤奋的摸鱼怪">
 <meta property="og:type" content="article">
-<meta property="og:title" content="游戏开发记录-#0 新建文件夹">
-<meta property="og:url" content="http://git.lolicc.com/2020/07/23/7-4-0-newfolder/index.html">
+<meta property="og:title" content="10月29日  大变申">
+<meta property="og:url" content="http://git.lolicc.com/2020/10/29/10-29-taihen/index.html">
 <meta property="og:site_name" content="院短Studio">
-<meta property="og:description" content="第0期，毕竟才新建了个文件夹（ 这里会简单的讲述一下这个游戏项目想要做成什么样，以及为什么会设计成这样。 首先，这个项目的前身是个画不下去的饼，RogueLIke+DeckBuildGame类的游戏。在搭完半个框架，完成Demo试玩后，感觉8太行所以砍掉了。但代码遗留了下来，就拿来做这个新项目了。 所以，新项目的游戏类型为 ARPG+RogueLite+傻之逼（？">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/QQ%E5%9B%BE%E7%89%8720200705005847.jpg">
-<meta property="article:published_time" content="2020-07-23T09:35:36.000Z">
-<meta property="article:modified_time" content="2020-07-24T15:12:32.977Z">
+<meta property="og:description" content="摸了一个半月，好爽（ 今后也会重新开始活动，成为一个勤奋的摸鱼怪">
+<meta property="article:published_time" content="2020-10-29T14:52:48.000Z">
+<meta property="article:modified_time" content="2020-10-29T14:54:58.246Z">
 <meta property="article:author" content="院短">
-<meta property="article:tag" content="代码">
+<meta property="article:tag" content="设计">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/QQ%E5%9B%BE%E7%89%8720200705005847.jpg">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://git.lolicc.com/2020/07/23/7-4-0-newfolder/"/>
+  <link rel="canonical" href="http://git.lolicc.com/2020/10/29/10-29-taihen/"/>
 
 
 
 
 
-  <title>游戏开发记录-#0 新建文件夹 | 院短Studio</title>
+  <title>10月29日  大变申 | 院短Studio</title>
   
 
 
@@ -281,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://git.lolicc.com/2020/07/23/7-4-0-newfolder/">
+    <link itemprop="mainEntityOfPage" href="http://git.lolicc.com/2020/10/29/10-29-taihen/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="院短">
@@ -298,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">游戏开发记录-#0 新建文件夹</h1>
+          <h1 class="post-title" itemprop="name headline">10月29日  大变申</h1>
         
 
         <div class="post-meta">
@@ -310,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T17:35:36+08:00">
-                2020-07-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-29T22:52:48+08:00">
+                2020-10-29
               </time>
             
 
@@ -370,41 +368,8 @@
       
 
       
-        <p><img src="https://cdn.jsdelivr.net/gh/yuanduan/ImgHosting/YUANDUANStudio-PIC/QQ%E5%9B%BE%E7%89%8720200705005847.jpg" alt="Image text"></p>
-<p>第0期，毕竟才新建了个文件夹（</p>
-<p>这里会简单的讲述一下这个游戏项目想要做成什么样，以及为什么会设计成这样。</p>
-<p>首先，这个项目的前身是个画不下去的饼，RogueLIke+DeckBuildGame类的游戏。在搭完半个框架，完成Demo试玩后，感觉8太行所以砍掉了。但代码遗留了下来，就拿来做这个新项目了。</p>
-<p>所以，新项目的游戏类型为 <b>ARPG+RogueLite+傻之逼</b>（？</p>
-<a id="more"></a>
-
-<p>有关ARPG和Rogue的部分倒是没什么争议，传统的四向移动俯视2d，攻击一个键闪避一个键。主要设计上的争议则是怎么把打牌融合进ARPG里。目前定下来的设计思路是把卡牌设计成为除了直接攻击的另一种攻击手段、增益和各类道具。卡组装备栏为了方便使用，暂时只设计8格。</p>
-<p>目前卡牌分为了三类，<strong>模式切换类、角色增益类和其他类</strong>：</p>
-<ul>
-<li><p>模式切换类<br>在游戏的战斗部分，人物战斗的<strong>动作模组</strong>限制在5个动作+1个蓄力动作上，如果需要使用其他<strong>战斗动作模组</strong>则需使用<strong>模式切换类卡牌</strong>。同时，在切换模组时会使用卡牌上的[切换动作]技能。同类攻击模组的切换只会增加[切换动作]的伤害。 </p>
-</li>
-<li><p>角色增益类<br>这类卡牌则是直接增益角色，对角色属性或状态或武器攻击赋予一系列的BUFF。或是对敌方造成各种Debuff。相对于模式切换类卡牌，增益卡牌的设计需要更加激进，更有特性化一些。为了做出差异化，[增益技能]有着技能等级这样的设计。<br>增益卡牌所赋予的[增益技能]，BUFF时间的单位为秒。[增益技能]同类buff高等级的覆盖低等级的。</p>
-</li>
-<li><p>其他类<br>这部分准备将被动道具和消耗品这样的卡牌算在这里。</p>
-</li>
-</ul>
-<hr>
-<h2 id="战斗系统的设计"><a href="#战斗系统的设计" class="headerlink" title="战斗系统的设计"></a>战斗系统的设计</h2><p>伤害公式：(我方攻击力(基础攻击力+武器攻击力*攻击力提升增益减益)-敌方防御力(基础防御力*防御力提升增益减益))*属性克制*对XXX加伤=计算伤害*追伤=最终伤害</p>
-<p>战斗是传统的ARPG，z键攻击x键翻滚， 血条精力条，再加一个使用卡牌的条（存疑，不知是否真的需要这个条来限制玩家）。攻击属性分为火-》风-》水-》火 光《-》暗</p>
-<p>当然了，z键攻击也不会让你一直按下去就能通关的。所以各类动作模组有着一系列的附加属性。</p>
-<ul>
-<li>攻击力：武器的基础面板</li>
-<li>属性：敌人基本上都会带有属性，属性克制会有1.5倍的增伤，逆属则会受到0.75的减益。</li>
-<li>大小：武器的攻击范围。范围嘛，当然是越大越好了（未定：距离刃终部分的敌人隐藏增伤）</li>
-<li>攻速：攻击后摇和下一刀攻击的前摇的间隔。</li>
-<li>削韧：韧性决定了攻击出手后是否会被攻击打断，公式为（韧性-削韧）。</li>
-<li>重量：决定了攻击中动画的速度，以及移动速度，基本上会和大小挂钩。</li>
-</ul>
-<hr>
-<h2 id="部分的设计"><a href="#部分的设计" class="headerlink" title="部分的设计"></a>部分的设计</h2><p>营地，毕竟是RogueLite，结束战斗后的升级加成也是要有的。</p>
-<p>卡牌来源，怪物强度越高，给的牌就越好（暂定</p>
-<p>让玩家选择路线，风险和收益上的抉择</p>
-<hr>
-<p>搬运自原博客</p>
+        <p>摸了一个半月，好爽（</p>
+<p>今后也会重新开始活动，成为一个勤奋的摸鱼怪</p>
 
       
     </div>
@@ -422,7 +387,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E4%BB%A3%E7%A0%81/" rel="tag"># 代码</a>
+            <a href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag"># 设计</a>
           
         </div>
       
@@ -435,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/23/hello-world/" rel="next" title="ReadMe">
-                <i class="fa fa-chevron-left"></i> ReadMe
+              <a href="/2020/09/19/9-19-scene-design/" rel="next" title="9_19_scene_design">
+                <i class="fa fa-chevron-left"></i> 9_19_scene_design
               </a>
             
           </div>
@@ -444,10 +409,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/23/7-5-0-rename-folder/" rel="prev" title="游戏开发记录-#0.1 重命名新建文件夹">
-                游戏开发记录-#0.1 重命名新建文件夹 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -499,17 +460,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -573,22 +525,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#战斗系统的设计"><span class="nav-number">1.</span> <span class="nav-text">战斗系统的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部分的设计"><span class="nav-number">2.</span> <span class="nav-text">部分的设计</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
